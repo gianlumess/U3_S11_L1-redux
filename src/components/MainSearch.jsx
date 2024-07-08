@@ -3,10 +3,12 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Job from "./Job";
 import { HeartFill } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
   const [jobs, setJobs] = useState([]);
+  const favouritesLength = useSelector((state) => state.preferiti.content.length);
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
 
@@ -44,7 +46,7 @@ const MainSearch = () => {
 
           <Link to="/favourites">
             <Button>
-              <HeartFill fill="currentColor" />
+              <HeartFill fill="currentColor" /> {favouritesLength}
             </Button>
           </Link>
         </Col>
