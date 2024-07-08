@@ -14,6 +14,7 @@ const mainReducer = (state = intitialState, action) => {
           content: [...state.preferiti.content, action.payload],
         },
       };
+
     default:
       return state;
   }
