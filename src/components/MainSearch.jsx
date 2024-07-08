@@ -34,6 +34,14 @@ const MainSearch = () => {
 
   return (
     <Container>
+      <div className="d-flex">
+        <Link className="ms-auto mt-3" to="/favourites">
+          <Button>
+            <HeartFill fill="currentColor" /> {favouritesLength}
+          </Button>
+        </Link>
+      </div>
+
       <Row>
         <Col xs={10} className="mx-auto my-3">
           <h1 className="display-1">Remote Jobs Search</h1>
@@ -43,12 +51,6 @@ const MainSearch = () => {
           <Form onSubmit={handleSubmit}>
             <Form.Control type="search" value={query} onChange={handleChange} placeholder="type and press Enter" />
           </Form>
-
-          <Link to="/favourites">
-            <Button>
-              <HeartFill fill="currentColor" /> {favouritesLength}
-            </Button>
-          </Link>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
           {jobs.map((jobData) => (
