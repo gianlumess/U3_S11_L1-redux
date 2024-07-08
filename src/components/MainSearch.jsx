@@ -9,7 +9,6 @@ const MainSearch = () => {
   const [query, setQuery] = useState("");
   const [jobs, setJobs] = useState([]);
   const favouritesLength = useSelector((state) => state.preferiti.content.length);
-  const jobsArray = useSelector((state) => state.jobs.content);
   const dispatch = useDispatch();
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
@@ -37,7 +36,7 @@ const MainSearch = () => {
 
   return (
     <Container>
-      <div className="d-flex">
+      <div className="d-flex sticky-top">
         <Link className="ms-auto mt-3" to="/favourites">
           <Button>
             <HeartFill fill="currentColor" /> {favouritesLength}
