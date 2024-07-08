@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 const Favourites = () => {
   const favouriteElements = useSelector((state) => state.preferiti.content);
+  const jobsArray = useSelector((state) => state.jobs.content);
+
   const dispatch = useDispatch();
   return (
     <Container>
@@ -18,7 +20,7 @@ const Favourites = () => {
           <ListGroup>
             {favouriteElements.map((preferito, index) => (
               <ListGroup.Item className="d-flex justify-content-between" key={index}>
-                {preferito}
+                <Link to={`/${preferito}`}>{preferito}</Link>
                 <div
                   className="btn btn-outline-danger"
                   onClick={() => {
