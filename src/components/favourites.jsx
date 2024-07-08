@@ -1,6 +1,6 @@
 import { ListGroup } from "react-bootstrap";
 
-const favourites = () => {
+const Favourites = () => {
   return (
     <ListGroup>
       <ListGroup.Item>Cras justo odio</ListGroup.Item>
@@ -8,4 +8,4 @@ const favourites = () => {
   );
 };
 
-export default favourites;
+export default Favourites;
