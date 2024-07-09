@@ -24,7 +24,7 @@ const Favourites = () => {
                 <div
                   className="btn btn-outline-danger"
                   onClick={() => {
-                    dispatch({ type: "REMOVE_TO_FAVOURITES", payload: preferito });
+                    dispatch({ type: "REMOVE_TO_FAVOURITES", payload: index });
                   }}
                 >
                   <Trash2Fill />

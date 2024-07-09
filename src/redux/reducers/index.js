@@ -18,6 +18,14 @@ const mainReducer = (state = intitialState, action) => {
           content: [...state.preferiti.content, action.payload],
         },
       };
+    case "REMOVE_TO_FAVOURITES":
+      return {
+        ...state,
+        preferiti: {
+          ...state.preferiti,
+          content: state.preferiti.content.filter((_, i) => i !== action.payload),
+        },
+      };
     case "ADD_JOBS_TO_ARRAY":
       return {
         ...state,
